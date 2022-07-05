@@ -1,0 +1,53 @@
+<div class="col-md-6 ml-auto container top_custom_padding">
+  <div class="card mx-4">
+    <div class="card-body p-4 card-background-color">
+      <h3 class="text-warning">New Movie</h3>
+      <app-notifications [notificationText]="notificationText" [showNotification]="showNotification"
+        (closeClick)="closeNotification($event)">
+      </app-notifications>
+      <form [formGroup]="form">
+        <div class="mb-4">
+          <app-input [label]="'Name'" [placeHolder]="'Sherlock'" formControlName="name"></app-input>
+        </div>
+        <div class="mb-4">
+          <app-input [label]="'Title'" [placeHolder]="'Sherlock'" formControlName="title"></app-input>
+        </div>
+        <div class="mb-4">
+          <app-select [label]="'Genre'" [options]="dropDownForGenre" [placeHolderText]="'Please select Genre'"
+            formControlName="genre"></app-select>
+        </div>
+        <div class="mb-4">
+          <app-select [label]="'Language'" [options]="dropDownModelOptionsLanguage"
+            [placeHolderText]="'Please select Language'" formControlName="language"></app-select>
+        </div>
+        <div class="mb-4">
+          <app-select [label]="'IMDB Rating'" [options]="dropDownOptionForIMDBRating"
+            [placeHolderText]="'Please select rating'" formControlName="imdnRating"></app-select>
+        </div>
+        <div class="mb-4">
+          <app-select [label]="'Type'" [options]="uploadTypeDropDown" [placeHolderText]="'Please select type'"
+            formControlName="type"></app-select>
+        </div>
+        <div class="mb-4">
+          <app-checkbox [checkBoxId]="'PrimeVideo'" [checkBoxName]="'PrimeVideo'" [checkBoxText]="'Prime Video'"
+            formControlName="isPrime"></app-checkbox>
+        </div>
+        <div class="mb-4">
+          <app-textarea [label]="'Description'" [placeHolder]="'Leave Description Here'" formControlName="description">
+          </app-textarea>
+        </div>
+        <div class="mb-4">
+          <div class="mb-4">
+            <img *ngIf="imageUrl" [src]="imageUrl" class="image_display" />
+          </div>
+          <input type="file" class="form-control mx-auto" #Image accept="image/*" (change)="handleFileUpload($event)" />
+        </div>
+      </form>
+      <div class="text-center">
+        <button type="button" class="btn btn-outline-danger" (click)="uploadMovie()" [disabled]="!form.valid">
+          Upload Movie
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

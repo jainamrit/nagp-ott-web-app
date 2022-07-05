@@ -1,0 +1,59 @@
+<app-loader [isLoading]="isLoading"></app-loader>
+<ng-container *ngIf="!isLoading && moviesList">
+  <div class="container-fluid py-2 pt-4 top_custom-padding" *ngIf="actionMovies && actionMovies.length>0">
+    <h4 class="text-light">Action and Adventure movies</h4>
+    <div class="d-flex flex-row flex-nowrap scrolling">
+      <ng-container *ngFor="let movie of actionMovies">
+        <app-movie-card [movie]="movie" (showDetails)="showMovieDetails($event)"></app-movie-card>
+      </ng-container>
+    </div>
+  </div>
+  <div class="container-fluid py-2 pt-4" *ngIf="dramaMovies && dramaMovies.length>0">
+    <h4 class="text-light">Drama movies</h4>
+    <div class="d-flex flex-row flex-nowrap scrolling">
+      <ng-container *ngFor="let movie of dramaMovies">
+        <app-movie-card [movie]="movie" (showDetails)="showMovieDetails($event)"></app-movie-card>
+      </ng-container>
+    </div>
+  </div>
+  <div class="container-fluid py-2 pt-4" *ngIf="horrorMovies && horrorMovies.length>0">
+    <h4 class="text-light">Horror movies</h4>
+    <div class="d-flex flex-row flex-nowrap scrolling">
+      <ng-container *ngFor="let movie of horrorMovies">
+        <app-movie-card [movie]="movie" (showDetails)="showMovieDetails($event)"></app-movie-card>
+      </ng-container>
+    </div>
+  </div>
+  <div class="container-fluid py-2 pt-4" *ngIf="comedyMovies && comedyMovies.length>0">
+    <h4 class="text-light">Comedy movies</h4>
+    <div class="d-flex flex-row flex-nowrap scrolling">
+      <ng-container *ngFor="let movie of comedyMovies">
+        <app-movie-card [movie]="movie" (showDetails)="showMovieDetails($event)"></app-movie-card>
+      </ng-container>
+    </div>
+  </div>
+  <div class="container-fluid py-2 pt-4" *ngIf="romanceMovies && romanceMovies.length>0">
+    <h4 class="text-light">Romance movies</h4>
+    <div class="d-flex flex-row flex-nowrap scrolling">
+      <ng-container *ngFor="let movie of romanceMovies">
+        <app-movie-card [movie]="movie" (showDetails)="showMovieDetails($event)"></app-movie-card>
+      </ng-container>
+    </div>
+  </div>
+  <div class="container-fluid py-2 pt-4" *ngIf="suspenseMovies && suspenseMovies.length>0">
+    <h4 class="text-light">Suspense movies</h4>
+    <div class="d-flex flex-row flex-nowrap scrolling">
+      <ng-container *ngFor="let movie of suspenseMovies">
+        <app-movie-card [movie]="movie" (showDetails)="showMovieDetails($event)"></app-movie-card>
+      </ng-container>
+    </div>
+  </div>
+  <div class="container-fluid py-2" *ngIf="shows && shows.length>0">
+    <h4 class="text-light">Shows</h4>
+    <div class="d-flex flex-row flex-nowrap scrolling">
+      <ng-container *ngFor="let movie of shows">
+        <app-movie-card [movie]="movie" (showDetails)="showMovieDetails($event)"></app-movie-card>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>

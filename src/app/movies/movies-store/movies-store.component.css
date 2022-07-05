@@ -1,0 +1,22 @@
+.scrolling {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.scrolling {
+  margin-bottom: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrolling::-webkit-scrollbar {
+  display: none;
+}
+
+.image_carousel {
+  width: 600px;
+  height: 350px;
+}
+
+.top_custom-padding{
+  margin-top: 100px;
+}

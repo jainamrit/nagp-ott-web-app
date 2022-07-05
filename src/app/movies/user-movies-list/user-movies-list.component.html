@@ -1,0 +1,12 @@
+<app-loader [isLoading]="isLoading"></app-loader>
+<div class="top_custom_padding custom_page_margin_right">
+  <app-notifications [notificationText]="notificationText" [showNotification]="showNotification"
+    *ngIf="showNotification" [errorNotification]="true" (closeClick)="closeNotification($event)">
+  </app-notifications>
+  <ng-container *ngIf="moviesList && moviesList.length>0">
+    <h3 class="text-info text-center text-capitalize">{{heading}}</h3>
+    <div class="border-bottom mb-4"></div>
+    <app-movie-card *ngFor="let movie of moviesList" [movie]="movie" (showDetails)="showMovieDetails($event)">
+    </app-movie-card>
+  </ng-container>
+</div>
