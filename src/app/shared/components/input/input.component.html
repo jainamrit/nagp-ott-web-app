@@ -1,0 +1,15 @@
+<label for="validationServer01" class="form-label text-light">{{
+  label
+  }}</label>
+<input type="text" class="form-control" [ngClass]="{
+    'is-valid': value && !hasError,
+    'is-invalid': value && hasError
+  }" id="validationServer01" [(ngModel)]="value" placeholder="{{ placeHolder }}" (change)="onInputChange()"
+  (keyup)="onkeyUp($event)" />
+<div [ngClass]="{
+    'invalid-feedback': value && hasError,
+    'valid-feedback': value && !hasError
+  }">
+  <span *ngIf="value && !hasError"> Looks good!</span>
+  <span *ngIf="value && hasError"> {{ validationErrorMsg }}</span>
+</div>
