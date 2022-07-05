@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+  background-color: black;
+  margin-left: 10px;
+}
+
+.custom_page_margin_right {
+  margin-right: 20px;
+}
