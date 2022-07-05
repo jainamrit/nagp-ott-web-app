@@ -1,0 +1,11 @@
+<label for="validationServer01" class="form-label text-light">{{
+  label
+  }}</label>
+<select class="form-select" [(ngModel)]="value" id="validationServer01">
+  <option [ngValue]="''" readonly hidden="true" selected>
+    {{ placeHolderText }}
+  </option>
+  <option *ngFor="let option of options" [ngValue]="option.text">
+    {{ option.text }}
+  </option>
+</select>
