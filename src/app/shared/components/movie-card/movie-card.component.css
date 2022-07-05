@@ -1,0 +1,22 @@
+.card {
+  margin-right: 5px;
+  margin-bottom: 10px;
+  display: inline-block;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  width: 300px;
+  height: auto;
+}
+.card:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.image {
+  width: 300px;
+  height: 250px;
+}
+
+.card-text {
+  white-space: pre-line;
+}

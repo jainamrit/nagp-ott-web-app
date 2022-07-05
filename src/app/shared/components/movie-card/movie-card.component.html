@@ -1,0 +1,8 @@
+<ng-container *ngIf="movie">
+  <div class="card" (click)="onShowDetailsClick()">
+    <img [src]="movie.imageUrl" class="d-block image" />
+    <div class="card-body">
+      <h5 class="card-title">{{movie.name}}</h5>
+    </div>
+  </div>
+</ng-container>

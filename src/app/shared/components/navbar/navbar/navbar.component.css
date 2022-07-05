@@ -1,0 +1,36 @@
+.nav_custom_items {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav_custom_items:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: '';
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.nav_custom_items:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+.navbar_custom_margin_right {
+  margin-right: 58rem !important;
+}
+
+.dropdown_custom {
+  cursor: pointer;
+}
+
+.logo {
+  height: 25px;
+}
