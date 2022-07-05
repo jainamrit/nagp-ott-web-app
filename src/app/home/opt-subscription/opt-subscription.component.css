@@ -1,0 +1,13 @@
+.top_custom_padding {
+  padding-top: 100px;
+}
+
+.custom_card {
+  width: fit-content;
+  height: fit-content;
+  background-image: linear-gradient(rgb(43, 43, 138), black);
+}
+
+th {
+  width: 20rem;
+}

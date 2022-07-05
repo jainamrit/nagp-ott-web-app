@@ -1,0 +1,67 @@
+<div class="custom_page_margin_right">
+  <section>
+    <div class="row">
+      <div class="col-6 mt-5 top_custom_padding">
+        <h3 class="text-light me-3">Welcome to NAGP Videos</h3>
+        <p class="text-light me-3">Join Here to watch latest movies,Tv-shows and lot more....</p>
+        <button type="button" class="btn btn-outline-dark text-light" *ngIf="!isUserLogged" (click)="signIn()">Sign in
+          to join
+          NAGP</button>
+        <button type="button" class="btn btn-outline-dark text-light" *ngIf="isUserLogged"
+          (click)="redirectToMovieStore()">
+          Store</button>
+      </div>
+      <div class="col-6">
+        <img src="../../../assets/images/ott.png" class="image_custom_size" />
+      </div>
+    </div>
+  </section>
+  <div class="border-bottom"></div>
+  <section class="text-center">
+    <div class="row">
+      <div class="col-6 mt-lg-5">
+        <h3 class="text-light me-3">Movies</h3>
+        <p class="text-light me-3">All Movies at one place</p>
+        <button type="button" class="btn btn-outline-dark text-light"
+          (click)="redirectTOMoviesOrShowsRoutes('movie')">Get All Movies
+        </button>
+      </div>
+      <div class="col-6">
+        <img src="../../../assets/images/homepage2.jpeg" class="image_custom_size" />
+      </div>
+    </div>
+  </section>
+  <div class="border-bottom"></div>
+  <section>
+    <div class="row">
+      <div class="col-6 mt-5">
+        <img src="../../../assets/images/4k.jpg" class="image_custom_size" />
+      </div>
+      <div class="col-6 mt-5">
+        <h3 class="text-light me-3">Benefits of NAGP Subscription</h3>
+        <ul class="me-3">
+          <li class="text-light">Early access to all movies, TV-shows before any where else comes</li>
+          <li class="text-light">Easy Parental control</li>
+          <li class="text-light">Full HD quality and with Dolby sound</li>
+          <li class="text-light">Family Friendly</li>
+          <li class="text-light">One Subscription, many devices</li>
+          <li class="text-light">Best in price</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <div class="border-bottom"></div>
+  <section class="text-center">
+    <div class="row">
+      <div class="col-6 mt-5">
+        <h3 class="text-light me-3">TV shows</h3>
+        <p class="text-light me-3">All TV shows at one place</p>
+        <button type="button" class="btn btn-outline-dark text-light" (click)="redirectTOMoviesOrShowsRoutes('show')">
+          Get All Shows</button>
+      </div>
+      <div class="col-6">
+        <img src="../../../assets/images/home4.jpg" class="image_custom_size" />
+      </div>
+    </div>
+  </section>
+</div>

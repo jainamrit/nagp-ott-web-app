@@ -1,0 +1,15 @@
+<app-loader [isLoading]="isLoading"></app-loader>
+<div class="container custom_padding_top" *ngIf="!isLoading">
+  <ng-container *ngIf="searchResult && searchResult.length>0">
+    <h4 class="text-light">{{searchResult.length}} found for , {{searchTerm}}</h4>
+    <div class="border-bottom custom_margin_bottom"></div>
+    <div class="flex-row flex-nowrap">
+      <ng-container *ngFor="let movie of searchResult">
+        <app-movie-card [movie]="movie" (showDetails)="showMovieDetails($event)"></app-movie-card>
+      </ng-container>
+    </div>
+  </ng-container>
+  <app-notifications [notificationText]="notificationText" [showNotification]="showNotification"
+    [errorNotification]="true" (closeClick)="closeNotification($event)">
+  </app-notifications>
+</div>

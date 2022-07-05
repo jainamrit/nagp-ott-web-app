@@ -1,0 +1,90 @@
+<div class="container top_custom_padding text-center">
+  <h3 class="text-light">Subscribe to watch all content on NAGP Prime</h3>
+  <div>
+    <div class="card text-center mx-auto text-secondary custom_card">
+      <div class="card-body">
+        <table class="table table-borderless" *ngIf="!this.isUserTakeSubscription">
+          <thead>
+            <tr>
+              <th></th>
+              <th class="text-warning me-5">Super</th>
+              <th class="text-warning ">Premium</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="table_custom_width  text-info">All content</td>
+              <td class="table_custom_width  text-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                  <path
+                    d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                </svg></td>
+              <td class="table_custom_width  text-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                  <path
+                    d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                </svg></td>
+            </tr>
+            <tr>
+              <td class="table_custom_width  text-info">Watch on TV or Laptop</td>
+              <td class="table_custom_width  text-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                  <path
+                    d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                </svg></td>
+              <td class="table_custom_width  text-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                  <path
+                    d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                </svg></td>
+            </tr>
+            <tr>
+              <td class="table_custom_width  text-info">Ads free movies and shows (except sports)</td>
+              <td class="table_custom_width  text-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                  <path
+                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg></td>
+              <td class="table_custom_width  text-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                  fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+                  <path
+                    d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+                </svg></td>
+            </tr>
+            <tr>
+              <td class="table_custom_width text-info">Number of devices that can be logged in</td>
+              <td class="table_custom_width  text-info">2</td>
+              <td class="table_custom_width  text-info">6</td>
+            </tr>
+            <tr>
+              <td class="table_custom_width text-info">Max video quality</td>
+              <td class="table_custom_width  text-info">Full HD(1080p)</td>
+              <td class="table_custom_width  text-info">4K(2160p)</td>
+            </tr>
+            <tr>
+              <td class="table_custom_width text-info">Max audio quality</td>
+              <td class="table_custom_width  text-info">Dolby 5.1</td>
+              <td class="table_custom_width  text-info">Dolby 5.1</td>
+            </tr>
+            <tr>
+              <td class="table_custom_width text-info"></td>
+              <td class="table_custom_width  text-info"></td>
+              <td class="table_custom_width  text-info"></td>
+            </tr>
+            <tr>
+              <td class="table_custom_width text-info"></td>
+              <td class="table_custom_width  text-info"><button type="button" (click)="addSubscription()"
+                  class="btn btn-outline-info">Super</button></td>
+              <td class="table_custom_width  text-info"><button type="button" class="btn btn-outline-info"
+                  (click)="addSubscription()">Premium</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <div *ngIf="isUserTakeSubscription" class="text-info">
+          Already taken subscription, Please enjoy prime benefits!!!!<br>
+          <button type="button" class="btn btn-outline-info mt-4" (click)="redirectDirectToStore()">Store</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
