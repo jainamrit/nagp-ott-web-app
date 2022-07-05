@@ -1,0 +1,31 @@
+<div class="container top_custom_padding">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card mx-4">
+        <div class="card-body p-4 card-background-color">
+          <h4 class="pb-3 text-center text-info">Login</h4>
+          <h4 class="pb-3 text-center text-danger" *ngIf="loginErrorMsg && loginErrorMsg.length > 0">
+            {{ loginErrorMsg }}
+          </h4>
+          <form [formGroup]="form">
+            <app-input [label]="'Email'" [placeHolder]="'xyz@abc.com'" formControlName="email"
+              [requiredErrorMsg]="'Required Field'" [validationErrors]="form.controls.email.errors"></app-input>
+            <app-input [label]="'Password'" [placeHolder]="'12345'" formControlName="password"
+              [requiredErrorMsg]="'Required Field'" [validationErrors]="form.controls.password.errors"
+              [minLengthErrorMsg]="'Minimun Length should be 8'"></app-input><br />
+            <app-checkbox [checkBoxId]="'isAdmin'" [checkBoxName]="'isAdmin'" [checkBoxText]="'Is Admin'"
+              formControlName="isAdmin" (onCheckClick)="adminCheckClick($event)"></app-checkbox>
+            <div class="pt-3 text-center">
+              <button class="btn btn-secondary" (click)="routeToSignup()" type="button">
+                New User
+              </button>
+              <button type="button" class="btn btn-success ms-1" (click)="login()" [disabled]="!form.valid">
+                Login
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

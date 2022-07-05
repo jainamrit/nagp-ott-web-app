@@ -1,0 +1,63 @@
+<div class="container top_custom_padding">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card mx-4">
+        <ng-container *ngIf="!isRegistrationSuccess; else registrationSuccess">
+          <div class="card-body p-4 card-background-color">
+            <h4 class="pb-3 text-center text-info">Register As New User</h4>
+            <h4 class="success_Msg text-danger" *ngIf="isRegistrationError">
+              {{ registrationcompleteMsg }}
+            </h4>
+            <form [formGroup]="form">
+              <app-input [label]="'FullName'" [placeHolder]="'Full Name'" formControlName="fullName"
+                [requiredErrorMsg]="'Required Field'" [validationErrors]="form.controls.fullName.errors"></app-input>
+              <app-input [label]="'Email'" [placeHolder]="'xyz@abc.com'" formControlName="email"
+                [requiredErrorMsg]="'Required Field'" [emailErrorMsg]="'Email not Valid'"
+                [validationErrors]="form.controls.email.errors"></app-input>
+              <app-input [label]="'Password'" [placeHolder]="'12345'" formControlName="password"
+                [requiredErrorMsg]="'Required Field'" [patternErrorMsg]="
+                  'Must contains 1 uppercase , contains 1 lowercase , contains 1 digit and contains special characters(@$!%*#?&)'
+                " [validationErrors]="form.controls.password.errors"
+                [minLengthErrorMsg]="'Minimun Length should be 8'"></app-input>
+              <app-input [label]="'Confirm Password'" [placeHolder]="'12345'" formControlName="confirmPassword"
+                [requiredErrorMsg]="'Required Field'" [minLengthErrorMsg]="'Minimun Length should be 8'"
+                [patternErrorMsg]="
+                  'Must contains 1 uppercase , contains 1 lowercase , contains 1 digit and contains special characters(@$!%*#?&)'
+                " [validationErrors]="form.controls.confirmPassword.errors" (inputChange)="checkPasswordsMatch()">
+              </app-input>
+              <div class="pt-3 text-center">
+                <button class="btn btn-secondary" type="button" (click)="login()" [disabled]="isLoading">
+                  Alreay a User?
+                </button>
+                <button class="btn btn-success ms-1" type="button" (click)="registerNewUser()"
+                  [disabled]="!this.form.valid || isLoading">
+                  <span class="spinner-grow spinner-grow-sm" *ngIf="isLoading"></span>
+                  SignUp
+                </button>
+              </div>
+            </form>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #registrationSuccess>
+  <div class="card-body p-4">
+    <div style="
+        border-radius: 200px;
+        height: 200px;
+        width: 200px;
+        background: #f8faf5;
+        margin: 0 auto;
+      ">
+      <i class="custom_tick">✓</i>
+    </div>
+    <h4 class="success_Msg">{{ registrationcompleteMsg }}</h4>
+    <div class="pt-3 text-center">
+      <button class="btn btn-secondary" (click)="login()" type="button">
+        Login
+      </button>
+    </div>
+  </div>
+</ng-template>
