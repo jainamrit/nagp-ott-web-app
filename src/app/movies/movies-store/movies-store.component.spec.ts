@@ -51,12 +51,4 @@ describe('MoviesStoreComponent', () => {
       expect(component.moviesList).toEqual(data)
     })
   });
-
-  it('should navigate to contract route', () => {
-    component.showMovieDetails('test123');
-    const params: Params = {};
-    params.customerId = 'test123';
-    expect(route.navigate).toHaveBeenCalledWith(['contract'], { queryParams: params });
-
-  });
 });

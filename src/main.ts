@@ -9,7 +9,7 @@ if (environment.production) {
   enableProdMode();
 }
 const config: IConfig = {
-  apiUrl: 'http://localhost:3000/',
+  apiUrl: 'https://nagp-backend-api.herokuapp.com/',
 };
 sessionStorage.setItem('configSettings', JSON.stringify(config));
 platformBrowserDynamic()
